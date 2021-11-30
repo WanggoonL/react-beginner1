@@ -15,14 +15,11 @@ function App() {
     setToDo("");
   };
 
-  /*
   function deleteToDo(event) {
     const li = event.target.parentElement;
-    console.log(toDos);
     li.remove();
-    
-  }
-*/
+    return;
+  } // toDos.length -1 함수를 아직 못만듦
 
   return (
     <div>
@@ -39,7 +36,10 @@ function App() {
       <hr />
       <ul>
         {toDos.map((thing, index) => (
-          <li key={index}>{thing}</li>
+          <li key={index}>
+            {thing}
+            <button onClick={deleteToDo}>X</button>
+          </li>
         ))}
       </ul>
     </div>
